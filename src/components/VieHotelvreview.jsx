@@ -41,6 +41,10 @@ const ViewHotelvreview = () => {
         }
     };
 
+    const handleDelete = (id) => {
+        changeData((prevData) => prevData.filter((item) => String(item.review_id) !== String(id)));
+    };
+
     return (
         <div className="page-shell">
             <div className="container py-4 py-lg-5">
@@ -80,6 +84,7 @@ const ViewHotelvreview = () => {
                                     <th>Cleanliness</th>
                                     <th>Overall Rating</th>
                                     <th>Review Comments</th>
+                                    <th style={{ width: "90px" }}>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -95,6 +100,11 @@ const ViewHotelvreview = () => {
                                         <td>{value.cleanliness_rating}</td>
                                         <td>{value.overall_rating}</td>
                                         <td>{value.review_comments}</td>
+                                        <td>
+                                            <button className="btn btn-sm btn-outline-danger" onClick={() => handleDelete(value.review_id)}>
+                                                Delete
+                                            </button>
+                                        </td>
                                     </tr>
                                 ))}
                             </tbody>
