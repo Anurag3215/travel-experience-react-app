@@ -41,13 +41,12 @@ const ViewTravel = () => {
         }
     };
 
-    const handleDelete = async (id) => {
+    const handleDelete = async (record) => {
         try {
             await axios.post("http://localhost:7500/delete_travel", {
-                experience_id: id,
-                id,
+                id: record.experience_id,
             });
-            changeData((prevData) => prevData.filter((item) => String(item.experience_id) !== String(id)));
+            changeData((prevData) => prevData.filter((item) => String(item._id) !== String(record._id)));
         } catch (error) {
             console.log(error);
             alert("Failed to delete travel record.");
@@ -110,7 +109,7 @@ const ViewTravel = () => {
                                         <td>{value.rating}</td>
                                         <td>{value.travel_tips}</td>
                                         <td>
-                                            <button className="btn btn-sm btn-outline-danger" onClick={() => handleDelete(value.experience_id)}>
+                                            <button className="btn btn-sm btn-outline-danger" onClick={() => handleDelete(value)}>
                                                 Delete
                                             </button>
                                         </td>

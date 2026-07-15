@@ -41,13 +41,12 @@ const ViewHotelvreview = () => {
         }
     };
 
-    const handleDelete = async (id) => {
+    const handleDelete = async (record) => {
         try {
             await axios.post("http://localhost:7500/delete_hotel", {
-                review_id: id,
-                id,
+                id: record.review_id,
             });
-            changeData((prevData) => prevData.filter((item) => String(item.review_id) !== String(id)));
+            changeData((prevData) => prevData.filter((item) => String(item._id) !== String(record._id)));
         } catch (error) {
             console.log(error);
             alert("Failed to delete hotel review.");
@@ -110,7 +109,7 @@ const ViewHotelvreview = () => {
                                         <td>{value.overall_rating}</td>
                                         <td>{value.review_comments}</td>
                                         <td>
-                                            <button className="btn btn-sm btn-outline-danger" onClick={() => handleDelete(value.review_id)}>
+                                            <button className="btn btn-sm btn-outline-danger" onClick={() => handleDelete(value)}>
                                                 Delete
                                             </button>
                                         </td>
