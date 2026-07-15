@@ -26,7 +26,7 @@ const AddAdventure = () => {
     const readValues = () => {
         console.log(input);
 
-        axios.post("http://localhost:9000/add-adventure", input)
+        axios.post("http://localhost:7500/add_adventure", input)
             .then((response) => {
                 alert("Adventure Activity Added Successfully");
                 console.log(response.data);
