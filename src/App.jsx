@@ -6,6 +6,8 @@ import './App.css'
 import HomePage from './components/HomePage'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AddTravel from './components/AddTravel'
+import ViewHotelvreview from './components/VieHotelvreview'
+import AddHotelreview from './components/AddHotelreview'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +19,8 @@ function App() {
 
       <Route path="/" element={<HomePage />} />
       <Route path="/add" element={<AddTravel />} />
+      <Route path="/addhotel" element={<AddHotelreview />} />
+      <Route path="/viewhotel" element={<ViewHotelvreview />} />
 
 
 

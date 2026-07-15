@@ -30,7 +30,7 @@ const AddHotelreview = () => {
     const submitData = () => {
 
         axios.post(
-            "http://localhost:3000/add-hotel-review",
+            "http://localhost:7500/add_hotel",
             input
         )
         .then((response) => {
