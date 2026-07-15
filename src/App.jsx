@@ -1,38 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-import HomePage from './components/HomePage'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import AddTravel from './components/AddTravel'
-import ViewHotelvreview from './components/VieHotelvreview'
-import AddHotelreview from './components/AddHotelreview'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import AddTravel from "./components/AddTravel";
+import ViewActivity from "./components/ViewActivity";
+import Navbar from "./components/Navbar";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
+
+      <Navbar />
+
       <Routes>
-
-      <Route path="/" element={<HomePage />} />
-      <Route path="/add" element={<AddTravel />} />
-      <Route path="/addhotel" element={<AddHotelreview />} />
-      <Route path="/viewhotel" element={<ViewHotelvreview />} />
-
-
-
-
+        <Route path="/" element={<HomePage />} />
+        <Route path="/add" element={<AddTravel />} />
+        <Route path="/View-act" element={<ViewActivity />} />
       </Routes>
-      
-      
-      
-      </BrowserRouter>
 
-    </>
-  )
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
