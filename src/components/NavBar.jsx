@@ -7,8 +7,7 @@ const NavBar = () => {
     { to: "/Addexperience", label: "Travel" },
     { to: "/addhotel", label: "Hotels" },
     { to: "/addadventure", label: "Adventure" },
-    { to: "/", label: "About", anchor: "#about" },
-    { to: "/", label: "Contact", anchor: "#contact" },
+    { to: "/", label: "View", anchor: "#about" },
   ];
 
   return (
@@ -48,7 +47,7 @@ const NavBar = () => {
         </button>
 
         <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-          <div className="navbar-nav align-items-lg-center gap-lg-1 me-2">
+          <div className="navbar-nav align-items-lg-center gap-lg-1">
             {links.map((link) => (
               link.anchor ? (
                 <a key={link.label} className="nav-link nav-link-pill" href={link.anchor}>
@@ -60,14 +59,6 @@ const NavBar = () => {
                 </NavLink>
               )
             ))}
-          </div>
-          <div className="d-flex align-items-center gap-2 mt-2 mt-lg-0">
-            <NavLink className="btn btn-outline-gradient btn-sm" to="/">
-              Login
-            </NavLink>
-            <NavLink className="btn btn-gradient btn-sm" to="/Addexperience">
-              Create Story
-            </NavLink>
           </div>
         </div>
       </div>

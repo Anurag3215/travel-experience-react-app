@@ -66,7 +66,7 @@ const HomePage = () => {
               </Link>
             </div>
             <div className="stats-row">
-              <div className="metric-card">
+              {/* <div className="metric-card">
                 <strong>1000+</strong>
                 <span>Travelers</span>
               </div>
@@ -77,11 +77,11 @@ const HomePage = () => {
               <div className="metric-card">
                 <strong>300+</strong>
                 <span>Adventures</span>
-              </div>
+              </div> */}
             </div>
           </div>
 
-          <div className="col-lg-5">
+          {/* <div className="col-lg-5">
             <div className="hero-visual">
               <div className="orb orb-one"></div>
               <div className="orb orb-two"></div>
@@ -113,7 +113,7 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </section>
 
         <section className="mt-5" id="about">
@@ -178,7 +178,7 @@ const HomePage = () => {
           </div>
         </section>
 
-        <section className="cta-panel mt-5" id="contact">
+        {/* <section className="cta-panel mt-5" id="contact">
           <div className="row align-items-center g-4">
             <div className="col-lg-8">
               <h3 className="fw-semibold mb-2">Ready to turn your trips into stories?</h3>
@@ -190,10 +190,10 @@ const HomePage = () => {
               </Link>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
 
-      <footer className="footer-shell">
+      {/* <footer className="footer-shell">
         <div className="container">
           <div className="row g-4 align-items-start">
             <div className="col-md-4">
@@ -234,7 +234,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 };
