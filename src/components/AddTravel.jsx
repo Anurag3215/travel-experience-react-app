@@ -42,15 +42,15 @@ const AddTravel = () => {
     return (
         <div>
 
-           
+
 
             <div className="container mt-5">
 
                 <div className="card shadow p-4">
 
-                    <h2 className="text-center mb-4 text-primary">
-                        Add Travel Experience
-                    </h2>
+                    <div className="travel-header">
+                        <h2>Add Travel Experience</h2>
+                    </div>
 
                     <div className="row g-3">
 
