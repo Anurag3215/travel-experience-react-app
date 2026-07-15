@@ -1,8 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import SearchResultModal from "./SearchResultModal";
 
 const ViewHotelvreview = () => {
     const [data, changeData] = useState([]);
+    const [searchText, setSearchText] = useState("");
+    const [selectedRecord, setSelectedRecord] = useState(null);
+    const [modalOpen, setModalOpen] = useState(false);
 
     const fetchData = () => {
         axios.post("http://localhost:7500/view_hotel")
@@ -18,6 +22,25 @@ const ViewHotelvreview = () => {
         fetchData();
     }, []);
 
+    const handleSearch = () => {
+        const trimmedValue = searchText.trim();
+        if (!trimmedValue) {
+            setSelectedRecord(null);
+            setModalOpen(false);
+            return;
+        }
+
+        const match = data.find((item) => String(item.review_id) === trimmedValue);
+        if (match) {
+            setSelectedRecord(match);
+            setModalOpen(true);
+        } else {
+            setSelectedRecord(null);
+            setModalOpen(false);
+            alert("No hotel review record found for this ID.");
+        }
+    };
+
     return (
         <div className="page-shell">
             <div className="container py-4 py-lg-5">
@@ -29,7 +52,18 @@ const ViewHotelvreview = () => {
                             </span>
                             <h2 className="section-title mt-2 mb-0">View Hotel Reviews</h2>
                         </div>
-                        <input className="search-input" placeholder="Search hotels" />
+                        <div className="d-flex gap-2">
+                            <input
+                                className="search-input"
+                                placeholder="Search by Review ID"
+                                value={searchText}
+                                onChange={(event) => setSearchText(event.target.value)}
+                                onKeyDown={(event) => event.key === "Enter" && handleSearch()}
+                            />
+                            <button className="btn-gradient" type="button" onClick={handleSearch}>
+                                Search
+                            </button>
+                        </div>
                     </div>
 
                     <div className="table-responsive">
@@ -68,6 +102,12 @@ const ViewHotelvreview = () => {
                     </div>
                 </div>
             </div>
+            <SearchResultModal
+                isOpen={modalOpen}
+                onClose={() => setModalOpen(false)}
+                title="Hotel Review Details"
+                record={selectedRecord}
+            />
         </div>
     );
 };
