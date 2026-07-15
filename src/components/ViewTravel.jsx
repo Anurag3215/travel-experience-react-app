@@ -41,6 +41,10 @@ const ViewTravel = () => {
         }
     };
 
+    const handleDelete = (id) => {
+        changeData((prevData) => prevData.filter((item) => String(item.experience_id) !== String(id)));
+    };
+
     return (
         <div className="page-shell">
             <div className="container py-4 py-lg-5">
@@ -80,6 +84,7 @@ const ViewTravel = () => {
                                     <th>Food Recommendation</th>
                                     <th>Rating</th>
                                     <th>Travel Tips</th>
+                                    <th style={{ width: "90px" }}>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -95,6 +100,11 @@ const ViewTravel = () => {
                                         <td>{value.food_recommendation}</td>
                                         <td>{value.rating}</td>
                                         <td>{value.travel_tips}</td>
+                                        <td>
+                                            <button className="btn btn-sm btn-outline-danger" onClick={() => handleDelete(value.experience_id)}>
+                                                Delete
+                                            </button>
+                                        </td>
                                     </tr>
                                 ))}
                             </tbody>
