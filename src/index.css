@@ -1,0 +1,191 @@
+/* =======================
+   Background
+======================= */
+
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#1b2756,#2f56d7);
+    min-height:100vh;
+}
+
+/* =======================
+   Main Container
+======================= */
+
+.page-container{
+    padding:40px 0;
+}
+
+/* =======================
+   Card
+======================= */
+
+.main-card{
+    width:85%;
+    max-width:1000px;
+    margin:auto;
+    background:#f8f9ff;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+
+/* =======================
+   Header
+======================= */
+
+.card-header-custom{
+    background:linear-gradient(90deg,#5145e6,#17b6d8);
+    color:#fff;
+    text-align:center;
+    padding:18px;
+}
+
+.card-header-custom h2{
+    margin:0;
+    font-size:35px;
+    font-weight:bold;
+}
+
+/* =======================
+   Body
+======================= */
+
+.card-body-custom{
+    padding:35px;
+}
+
+/* =======================
+   Labels
+======================= */
+
+label{
+    font-weight:600;
+    color:#2c2c2c;
+    margin-bottom:6px;
+}
+
+/* =======================
+   Inputs
+======================= */
+
+.form-control,
+.form-select{
+    height:48px;
+    border-radius:12px;
+    border:2px solid #d8e6ff;
+    box-shadow:none;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color:#4d6eff;
+    box-shadow:0 0 8px rgba(77,110,255,.3);
+}
+
+textarea.form-control{
+    height:95px;
+    resize:none;
+}
+
+/* =======================
+   Button
+======================= */
+
+.custom-btn{
+    background:linear-gradient(90deg,#2f65f5,#19c0d8);
+    color:white;
+    border:none;
+    padding:12px 45px;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.custom-btn:hover{
+    transform:translateY(-2px);
+    color:white;
+    box-shadow:0 8px 18px rgba(0,0,0,.25);
+}
+
+/* =======================
+   Table
+======================= */
+
+.table-container{
+    padding:30px;
+}
+
+.table{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.table thead{
+    background:linear-gradient(90deg,#5145e6,#17b6d8);
+    color:white;
+}
+
+.table th{
+    padding:15px;
+    text-align:center;
+}
+
+.table td{
+    text-align:center;
+    vertical-align:middle;
+}
+
+.table tbody tr:hover{
+    background:#eef4ff;
+}
+
+/* =======================
+   Home Cards
+======================= */
+
+.home-card{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+    transition:.3s;
+}
+
+.home-card:hover{
+    transform:translateY(-8px);
+}
+
+.home-card h4{
+    color:#2f65f5;
+    font-weight:bold;
+}
+
+.home-card p{
+    color:#555;
+}
+
+/* =======================
+   Responsive
+======================= */
+
+@media(max-width:768px){
+
+.main-card{
+    width:95%;
+}
+
+.card-header-custom h2{
+    font-size:26px;
+}
+
+.card-body-custom{
+    padding:20px;
+}
+
+}
