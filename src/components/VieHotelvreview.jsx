@@ -41,8 +41,17 @@ const ViewHotelvreview = () => {
         }
     };
 
-    const handleDelete = (id) => {
-        changeData((prevData) => prevData.filter((item) => String(item.review_id) !== String(id)));
+    const handleDelete = async (id) => {
+        try {
+            await axios.post("http://localhost:7500/delete_hotel", {
+                review_id: id,
+                id,
+            });
+            changeData((prevData) => prevData.filter((item) => String(item.review_id) !== String(id)));
+        } catch (error) {
+            console.log(error);
+            alert("Failed to delete hotel review.");
+        }
     };
 
     return (

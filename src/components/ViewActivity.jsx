@@ -41,8 +41,17 @@ const ViewActivity = () => {
         }
     };
 
-    const handleDelete = (id) => {
-        changeData((prevData) => prevData.filter((item) => String(item.activity_id) !== String(id)));
+    const handleDelete = async (id) => {
+        try {
+            await axios.post("http://localhost:7500/delete_adventure", {
+                activity_id: id,
+                id,
+            });
+            changeData((prevData) => prevData.filter((item) => String(item.activity_id) !== String(id)));
+        } catch (error) {
+            console.log(error);
+            alert("Failed to delete adventure record.");
+        }
     };
 
     return (

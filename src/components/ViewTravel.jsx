@@ -41,8 +41,17 @@ const ViewTravel = () => {
         }
     };
 
-    const handleDelete = (id) => {
-        changeData((prevData) => prevData.filter((item) => String(item.experience_id) !== String(id)));
+    const handleDelete = async (id) => {
+        try {
+            await axios.post("http://localhost:7500/delete_travel", {
+                experience_id: id,
+                id,
+            });
+            changeData((prevData) => prevData.filter((item) => String(item.experience_id) !== String(id)));
+        } catch (error) {
+            console.log(error);
+            alert("Failed to delete travel record.");
+        }
     };
 
     return (
