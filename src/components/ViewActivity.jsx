@@ -41,6 +41,10 @@ const ViewActivity = () => {
         }
     };
 
+    const handleDelete = (id) => {
+        changeData((prevData) => prevData.filter((item) => String(item.activity_id) !== String(id)));
+    };
+
     return (
         <div className="page-shell">
             <div className="container py-4 py-lg-5">
@@ -81,6 +85,7 @@ const ViewActivity = () => {
                                     <th>Safety Rating</th>
                                     <th>Best Season</th>
                                     <th>Description</th>
+                                    <th style={{ width: "90px" }}>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -97,6 +102,11 @@ const ViewActivity = () => {
                                         <td><span className="badge-soft">{value.safety_rating}/5</span></td>
                                         <td>{value.best_season}</td>
                                         <td>{value.description}</td>
+                                        <td>
+                                            <button className="btn btn-sm btn-outline-danger" onClick={() => handleDelete(value.activity_id)}>
+                                                Delete
+                                            </button>
+                                        </td>
                                     </tr>
                                 ))}
                             </tbody>
