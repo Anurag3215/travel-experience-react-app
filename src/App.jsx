@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import AddTravel from "./components/AddTravel";
 import ViewActivity from "./components/ViewActivity";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar";
 import ViewTravel from "./components/ViewTravel";
 import AddHotelreview from "./components/AddHotelreview";
 import ViewHotelvreview from "./components/VieHotelvreview";
